@@ -56,7 +56,7 @@ COLORS = {
 
 
 class TowerSlack(object):
-    def __init__(self, name='Tower', icon=TOWER_ICON, timeout=2):
+    def __init__(self, name='Tower', icon=TOWER_ICON, timeout=30):
         self.name = name
         self.icon = icon
         self.timeout = timeout
@@ -184,4 +184,5 @@ def bad_request(start_response):
 
 
 def http_post(url, **kwargs):
-    requests.post(url, **kwargs)
+    r = requests.post(url, **kwargs)
+    print 'response is', r.json()
