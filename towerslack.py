@@ -185,4 +185,4 @@ def bad_request(start_response):
 
 def http_post(url, **kwargs):
     r = requests.post(url, **kwargs)
-    print 'response is', r.json()
+    print 'response is', r.text
