@@ -147,7 +147,7 @@ class TowerSlack(object):
         payload = self.create_payload(json.load(req.stream), event)
         url = 'https://hooks.slack.com/services/%s' % (req.path.lstrip('/'))
 
-        print 'sending to', url
+        print 'sending to', url, 'payload', json.dumps(payload)
 
         self.send_payload(payload, url, signature)
         return response(start_response)
